@@ -3,12 +3,13 @@
     <h4 class="heading mb-4 pb-1">
       {{ pagesMapping.selectServicePage.title }}
     </h4>
-    <b-form-radio-group class="row justify-content-between px-3">
+
+    <b-form-radio-group class="row justify-content-between px-3 ">
       <div
         :class="
           select.selected === pagesMapping.selectServicePage.serviceSlug[0]
             ? 'card-block radio selected'
-            : 'card-block radio '
+            : 'card-block radio'
         "
       >
         <b-row class=" justify-content-end d-flex px-3">
@@ -29,7 +30,9 @@
           <div class="pic">
             <img src="https://i.imgur.com/4uBi6ib.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[0] }}</h5>
+          <h5 class="mb-4">
+            {{ pagesMapping.selectServicePage.content[0] }}
+          </h5>
         </b-row>
       </div>
       <div
@@ -57,7 +60,9 @@
           <div class="pic">
             <img src="https://i.imgur.com/nwy6Wkh.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[1] }}</h5>
+          <h5 class="mb-4">
+            {{ pagesMapping.selectServicePage.content[1] }}
+          </h5>
         </b-row>
       </div>
       <div
@@ -85,10 +90,13 @@
           <div class="pic">
             <img src="https://i.imgur.com/74Ez7OS.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[2] }}</h5>
+          <h5 class="mb-4">
+            {{ pagesMapping.selectServicePage.content[2] }}
+          </h5>
         </b-row>
       </div>
     </b-form-radio-group>
+
     <b-row class="justify-content-center">
       <ButtonRight @click.native="nextButton" />
     </b-row>

@@ -6,7 +6,7 @@
         scale="1"
         variant="light"
         class="fa-long-arrow-left"/></span
-    >Back
+    >Zurück
   </b-button>
 </template>
 

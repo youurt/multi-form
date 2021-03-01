@@ -6,8 +6,8 @@
           <CardHeader />
           <Progress :currentPage="currentPage" />
           <div class="content-fix">
-            <div class="card-body show pt-0 mb-3">
-              <div class="content-change ">
+            <b-card-body class="show pt-0 mb-3">
+              <div class="content-change">
                 <div v-if="state.next === 1">
                   <SelectServicePage
                     :state="{ ...state }"
@@ -40,7 +40,7 @@
                 </div>
                 <div v-else><FinalPage :state="{ ...state }" /></div>
               </div>
-            </div>
+            </b-card-body>
           </div>
         </b-card>
       </b-col>
@@ -96,11 +96,9 @@ export default {
   updated() {
     this.$nextTick(function() {
       this.currentPage = this.state.next;
-      console.log(this.currentPage);
     });
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style></style>

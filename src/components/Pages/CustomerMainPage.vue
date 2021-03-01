@@ -60,19 +60,19 @@
     </b-form-group>
     <b-form-group
       id="input-group-4"
-      :label="pagesMapping.customerMainPage.fields.mob.field"
+      :label="pagesMapping.customerMainPage.fields.cuid.field"
       label-for="input-4"
     >
       <b-form-input
         id="input-4"
-        name="mob"
-        v-model="form.mob"
-        :placeholder="pagesMapping.customerMainPage.fields.mob.placeholder"
+        name="cuid"
+        v-model="form.cuid"
+        :placeholder="pagesMapping.customerMainPage.fields.cuid.placeholder"
         :state="isMobStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isMobStateValid">
-        {{ pagesMapping.customerMainPage.fields.mob.errorMsg }}
+        {{ pagesMapping.customerMainPage.fields.cuid.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
     <div class="row justify-content-center">
@@ -100,7 +100,7 @@ export default {
         fname: '',
         lname: '',
         email: '',
-        mob: '',
+        cuid: '',
         next: 3,
       },
     };
@@ -133,8 +133,8 @@ export default {
     },
     isValidMob() {
       const re = /^[a-z0-9]+$/i;
-      return this.form.mob
-        ? re.test(this.form.mob) && this.form.mob.length === 7
+      return this.form.cuid
+        ? re.test(this.form.cuid) && this.form.cuid.length === 7
         : null;
     },
   },
@@ -149,7 +149,7 @@ export default {
       return this.form.email ? this.isValidEmail() : null;
     },
     isMobStateValid() {
-      return this.form.mob ? this.isValidMob() : null;
+      return this.form.cuid ? this.isValidMob() : null;
     },
     isCompleted() {
       return this.isValidName() &&
@@ -168,7 +168,7 @@ export default {
       !this.isEmailStateValid &&
         errs.push(pagesMapping.customerMainPage.fields.email.field);
       !this.isMobStateValid &&
-        errs.push(pagesMapping.customerMainPage.fields.mob.field);
+        errs.push(pagesMapping.customerMainPage.fields.cuid.field);
 
       return errorService(errs);
     },

@@ -1,6 +1,6 @@
 <template>
   <b-button variant="blue" class="btn next mx-2">
-    Apply<span
+    Bestätige<span
       ><b-icon
         icon="check2-all"
         scale="1"

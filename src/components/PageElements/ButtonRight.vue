@@ -1,6 +1,6 @@
 <template>
   <b-button variant="blue" class="btn next mx-2">
-    Next<span
+    Weiter<span
       ><b-icon
         icon="arrow-right"
         scale="1"

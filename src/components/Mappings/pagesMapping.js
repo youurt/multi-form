@@ -22,7 +22,7 @@ const pagesInfo = {
         placeholder: 'Geben Sie Ihre e-mail Adresse ein',
         errorMsg: 'Die e-mail Adresse scheint nicht korrekt!',
       },
-      mob: {
+      cuid: {
         field: 'Kunden-ID',
         placeholder: 'Geben Sie Ihre Kunden-ID ein',
         errorMsg: 'Die Kunden-ID ist genau 7 Zeichen lang!',
@@ -64,6 +64,12 @@ const pagesInfo = {
   editPage: { title: 'Bearbeiten Sie hier den Auftrag' },
   summaryPage: { title: 'Bestätigen Sie die Auftragszusammenfassung' },
   finalPage: { title: 'Vielen dank! Der Auftrag wurde bestätigt' },
+  headerPage: {
+    title: 'Nennen Sie uns Ihr Problem und wir helfen gerne!',
+    subtitle: 'Ihr ComputerRepair24.com Team!',
+    callText: 'Rufen Sie uns an',
+    callNo: '0123456789',
+  },
 };
 
 export default pagesInfo;
