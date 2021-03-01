@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h4 class="heading mb-4 pb-1">First Page</h4>
+    <h4 class="heading mb-4 pb-1">
+      {{ pagesMapping.selectServicePage.title }}
+    </h4>
     <b-form-radio-group class="row justify-content-between px-3">
       <div
         :class="
@@ -23,7 +25,7 @@
           <div class="pic">
             <img src="https://i.imgur.com/4uBi6ib.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">Create Website</h5>
+          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[0] }}</h5>
         </b-row>
       </div>
       <div
@@ -47,7 +49,7 @@
           <div class="pic">
             <img src="https://i.imgur.com/nwy6Wkh.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">Website Relaunch</h5>
+          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[1] }}</h5>
         </b-row>
       </div>
       <div
@@ -69,7 +71,7 @@
           <div class="pic">
             <img src="https://i.imgur.com/74Ez7OS.png" class="pic-0" />
           </div>
-          <h5 class="mb-4">Don't Know</h5>
+          <h5 class="mb-4">{{ pagesMapping.selectServicePage.content[2] }}</h5>
         </b-row>
       </div>
     </b-form-radio-group>
@@ -81,6 +83,7 @@
 
 <script>
 // import { } from 'bootstrap-vue';
+import pagesMapping from '../Mappings/pagesMapping';
 import ButtonRight from '../PageElements/ButtonRight';
 export default {
   components: { ButtonRight },
@@ -88,6 +91,7 @@ export default {
   data: () => {
     return {
       select: { selected: 'create-website', next: 2 },
+      pagesMapping: pagesMapping,
     };
   },
 
@@ -97,6 +101,7 @@ export default {
     },
   },
   mounted() {
+    console.log(pagesMapping.selectServicePage.title);
     this.select.selected = this.state.selected
       ? this.state.selected
       : 'create-website';

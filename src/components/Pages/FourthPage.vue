@@ -1,6 +1,6 @@
 <template>
   <div class="editor">
-    <h4 class="heading mb-4 pb-1">Fourth Page</h4>
+    <h4 class="heading mb-4 pb-1">{{ pagesMapping.editPage.title }}</h4>
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
       <div class="menubar">
         <button
@@ -220,29 +220,16 @@
     </div> -->
     <editor-content class="editor__content " :editor="editor" />
     <div class="row justify-content-center">
-      <button class="btn btn-secondary prev mx-2" @click="prevButton">
-        <span
-          ><b-icon
-            icon="arrow-left"
-            scale="1"
-            variant="light"
-            class="fa-long-arrow-left"/></span
-        >Back
-      </button>
-      <button class="btn btn-blue next mx-2" id="next3" @click="nextButton">
-        Next<span
-          ><b-icon
-            icon="arrow-right"
-            scale="1"
-            variant="light"
-            class="fa-long-arrow-right"
-        /></span>
-      </button>
+      <ButtonLeft @click.native="prevButton" />
+      <ButtonRight @click.native="nextButton" />
     </div>
   </div>
 </template>
 
 <script>
+import pagesMapping from '../Mappings/pagesMapping';
+import ButtonLeft from '../PageElements/ButtonLeft';
+import ButtonRight from '../PageElements/ButtonRight';
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap';
 import {
   Blockquote,
@@ -268,9 +255,12 @@ export default {
   components: {
     EditorContent,
     EditorMenuBar,
+    ButtonLeft,
+    ButtonRight,
   },
   data() {
     return {
+      pagesMapping,
       htmlData: { next: 5 },
       editor: new Editor({
         extensions: [
@@ -292,9 +282,7 @@ export default {
           new Underline(),
           new History(),
         ],
-        content: `
-
-        `,
+        content: '',
       }),
     };
   },
@@ -330,9 +318,6 @@ export default {
       ],
     });
   },
-  // beforeDestroy() {
-  //   this.editor.destroy();
-  // },
 };
 </script>
 

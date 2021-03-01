@@ -1,63 +1,78 @@
 <template>
   <div>
-    <h4 class="heading mb-4 pb-1">Second Page</h4>
+    <h4 class="heading mb-4 pb-1">{{ pagesMapping.customerMainPage.title }}</h4>
     <ErrorMessage
       :showError="showError"
       :dismissCountDown="dismissCountDown"
       :countDownChanged="countDownChanged"
     />
 
-    <b-form-group id="input-group-1" label="First Name: *" label-for="input-1">
+    <b-form-group
+      id="input-group-1"
+      :label="pagesMapping.customerMainPage.fields.fname.field"
+      label-for="input-1"
+    >
       <b-form-input
         id="input-1"
         name="fname"
         v-model="form.fname"
-        placeholder="Enter First Name"
+        :placeholder="pagesMapping.customerMainPage.fields.fname.placeholder"
         :state="isNameStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isNameStateValid">
-        Your must enter a valid name.
+        {{ pagesMapping.customerMainPage.fields.fname.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
-    <b-form-group id="input-group-2" label="Last name: *" label-for="input-2">
+    <b-form-group
+      id="input-group-2"
+      :label="pagesMapping.customerMainPage.fields.lname.field"
+      label-for="input-2"
+    >
       <b-form-input
         id="input-2"
         name="lname"
         v-model="form.lname"
-        placeholder="Enter Last Name"
+        :placeholder="pagesMapping.customerMainPage.fields.lname.placeholder"
         :state="isLastNameStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isLastNameStateValid">
-        Your must enter a valid last name.
+        {{ pagesMapping.customerMainPage.fields.lname.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
-    <b-form-group id="input-group-3" label="Email: *" label-for="input-3">
+    <b-form-group
+      id="input-group-3"
+      :label="pagesMapping.customerMainPage.fields.email.field"
+      label-for="input-3"
+    >
       <b-form-input
         id="input-3"
         name="email"
         v-model="form.email"
-        placeholder="Enter Email adress"
+        :placeholder="pagesMapping.customerMainPage.fields.email.placeholder"
         :state="isEmailStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isEmailStateValid">
-        Your must enter a valid email adress.
+        {{ pagesMapping.customerMainPage.fields.email.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
-    <b-form-group id="input-group-4" label="Kunden Id: *" label-for="input-4">
+    <b-form-group
+      id="input-group-4"
+      :label="pagesMapping.customerMainPage.fields.mob.field"
+      label-for="input-4"
+    >
       <b-form-input
         id="input-4"
         name="mob"
         v-model="form.mob"
-        placeholder="Kunden Id"
+        :placeholder="pagesMapping.customerMainPage.fields.mob.placeholder"
         :state="isMobStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isMobStateValid">
-        Die Kunden Id ist eine Kombination aus Zahlen und Buchstaben und hat die
-        Länge 7
+        {{ pagesMapping.customerMainPage.fields.mob.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
     <div class="row justify-content-center">
@@ -72,12 +87,13 @@ import errorService from '../../services/ErrorService';
 import ButtonLeft from '../PageElements/ButtonLeft';
 import ButtonRight from '../PageElements/ButtonRight';
 import ErrorMessage from '../PageElements/ErrorMessage';
-
+import pagesMapping from '../Mappings/pagesMapping';
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },
   props: { state: Object },
   data: () => {
     return {
+      pagesMapping: pagesMapping,
       dismissSecs: 5,
       dismissCountDown: 0,
       form: {

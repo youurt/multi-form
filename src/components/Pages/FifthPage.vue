@@ -1,38 +1,28 @@
 <template>
   <div>
-    <h4 class="heading mb-4 pb-1">Fifth Page</h4>
+    <h4 class="heading mb-4 pb-1">{{ pagesMapping.summaryPage.title }}</h4>
     <div>
       <p>{{ state.fname }}</p>
     </div>
     <div class="row justify-content-center">
-      <button class="btn btn-secondary prev mx-2" @click="prevButton">
-        <span
-          ><b-icon
-            icon="arrow-left"
-            scale="1"
-            variant="light"
-            class="fa-long-arrow-left"/></span
-        >Back
-      </button>
-      <button class="btn btn-blue next mx-2" id="next3" @click="nextButton">
-        Apply<span
-          ><b-icon
-            icon="check2-all"
-            scale="1"
-            variant="light"
-            class="fa-long-arrow-right"
-        /></span>
-      </button>
+      <ButtonLeft @click.native="prevButton" />
+      <ButtonApply @click.native="nextButton" />
     </div>
   </div>
 </template>
 
 <script>
+import pagesMapping from '../Mappings/pagesMapping';
+import ButtonLeft from '../PageElements/ButtonLeft';
+import ButtonApply from '../PageElements/ButtonApply';
 export default {
+  components: { ButtonLeft, ButtonApply },
   finalData: {},
   props: { state: Object },
   data: () => {
-    return {};
+    return {
+      pagesMapping,
+    };
   },
   methods: {
     nextButton() {

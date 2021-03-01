@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="heading mb-4 pb-1">Third Page</h4>
+    <h4 class="heading mb-4 pb-1">{{ pagesMapping.issueDetailPage.title }}</h4>
     <ErrorMessage
       :showError="showError"
       :dismissCountDown="dismissCountDown"
@@ -9,74 +9,75 @@
 
     <b-form-group
       id="input-group-1"
-      label="Company Name: *"
+      :label="pagesMapping.issueDetailPage.fields.cname.field"
       label-for="input-1"
     >
       <b-form-input
         id="input-1"
         name="cname"
         v-model="form.cname"
-        placeholder="Enter Company Name"
+        :placeholder="pagesMapping.issueDetailPage.fields.cname.placeholder"
         :state="isCompanyStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isCompanyStateValid">
-        Your must enter a valid Company name.
+        {{ pagesMapping.issueDetailPage.fields.cname.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
 
-    <b-form-group id="input-group-2" label="Zip Code: *" label-for="input-2">
+    <b-form-group
+      id="input-group-2"
+      :label="pagesMapping.issueDetailPage.fields.zip.field"
+      label-for="input-2"
+    >
       <b-form-input
         id="input-2"
         name="zip"
         v-model="form.zip"
-        placeholder="Enter Zip Code"
+        :placeholder="pagesMapping.issueDetailPage.fields.cname.placeholder"
         :state="isZipStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isZipStateValid">
-        Your must enter a valid Zip Code.
+        {{ pagesMapping.issueDetailPage.fields.cname.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
 
     <b-form-group
       id="input-group-3"
-      label="Website Titel: *"
+      :label="pagesMapping.issueDetailPage.fields.title.field"
       label-for="input-3"
     >
       <b-form-input
         id="input-3"
         name="title"
         v-model="form.title"
-        placeholder="Enter Title"
+        :placeholder="pagesMapping.issueDetailPage.fields.title.placeholder"
         :state="isTitleStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isTitleStateValid">
-        Your must enter a valid Title.
+        {{ pagesMapping.issueDetailPage.fields.title.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
 
     <b-form-group
       id="input-group-4"
-      label="Website Type: *"
+      :label="pagesMapping.issueDetailPage.fields.typeinfo.field"
       label-for="input-4"
     >
       <b-form-select
         id="input-4"
         v-model="form.typeinfo"
-        :options="typeinfo"
+        :options="pagesMapping.issueDetailPage.fields.typeinfo.options"
         required
         :state="isTypeStateValid"
       ></b-form-select>
       <b-form-invalid-feedback :state="isTypeStateValid">
-        Select one option.
+        {{ pagesMapping.issueDetailPage.fields.typeinfo.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
 
-    <b-form-invalid-feedback :state="isTypeStateValid">
-      Your must enter a valid name.
-    </b-form-invalid-feedback>
     <div class="row justify-content-center">
       <ButtonLeft @click.native="prevButton" />
       <ButtonRight @click.native="nextButton" />
@@ -89,12 +90,13 @@ import errorService from '../../services/ErrorService';
 import ButtonLeft from '../PageElements/ButtonLeft';
 import ButtonRight from '../PageElements/ButtonRight';
 import ErrorMessage from '../PageElements/ErrorMessage';
-
+import pagesMapping from '../Mappings/pagesMapping';
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },
   props: { state: Object },
   data: () => {
     return {
+      pagesMapping: pagesMapping,
       dismissSecs: 5,
       dismissCountDown: 0,
       form: {
@@ -104,13 +106,6 @@ export default {
         typeinfo: '',
         next: 4,
       },
-      typeinfo: [
-        { text: 'Select One', value: null },
-        'E-commerce',
-        'Personal',
-        'Business',
-        'Education',
-      ],
     };
   },
   methods: {
