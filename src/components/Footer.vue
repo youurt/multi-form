@@ -1,12 +1,6 @@
 <template>
   <div>
-    <b-navbar
-      fixed="bottom"
-      sticky="false"
-      toggleable="lg"
-      type="dark"
-      variant="info"
-    >
+    <b-navbar fixed="bottom" toggleable="lg" type="dark" variant="info" sticky>
       <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

@@ -1,5 +1,6 @@
 <template>
   <div class="editor">
+    <h4 class="heading mb-4 pb-1">Fourth Page</h4>
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
       <div class="menubar">
         <button

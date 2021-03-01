@@ -136,7 +136,7 @@ export default {
 }
 
 .btn-blue:hover {
-  background-color: #000;
+  background-color: #fbc02d;
 }
 
 .btn-secondary {
