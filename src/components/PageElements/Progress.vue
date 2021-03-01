@@ -1,29 +1,31 @@
 <template>
   <div>
-    <b-row class=" d-flex justify-content-sm-end justify-content-start px-5">
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped progress-bar-animated"
-          role="progressbar"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-      </div>
-    </b-row>
-
-    <b-row class="d-flex justify-content-sm-end justify-content-start px-5">
-      <div class="count text-center">
-        <p class="mb-sm-0 pb-sm-0">
-          <strong><span id="cnt">25</span>%</strong>
-          <span class="yellow-text">Completed</span>
-        </p>
-      </div>
-    </b-row>
+    <b-progress
+      class="mb-3"
+      :value="value * currentPage"
+      :max="max"
+      show-progress
+      animated
+    ></b-progress>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: { currentPage: Number },
+  data() {
+    return {
+      value: 20,
+      max: 100,
+    };
+  },
+
+  // updated() {
+  //   this.$nextTick(function() {
+  //     this.value *= this.currentPage;
+  //   });
+  // },
+};
 </script>
 
 <style></style>

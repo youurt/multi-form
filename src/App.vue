@@ -24,13 +24,6 @@ export default {
 </script>
 
 <style>
-.progress {
-  height: 13px;
-  width: 350px;
-  margin: 10px 20px;
-  background-color: #fff176;
-}
-
 .progress-bar {
   background-color: #fbc02d;
 }

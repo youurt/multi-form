@@ -4,7 +4,7 @@
       <b-col class="col-xl-9 col-lg-10 col-md-11">
         <b-card no-body class="card rounded-0 b-0">
           <CardHeader />
-          <Progress />
+          <Progress :currentPage="currentPage" />
           <div class="content-fix">
             <div class="card-body show pt-0">
               <div class="content-change">
@@ -72,6 +72,7 @@ export default {
   data() {
     return {
       state: { next: 1 },
+      currentPage: 1,
     };
   },
   methods: {
@@ -92,6 +93,12 @@ export default {
     },
   },
   mounted() {},
+  updated() {
+    this.$nextTick(function() {
+      this.currentPage = this.state.next;
+      console.log(this.currentPage);
+    });
+  },
 };
 </script>
 
