@@ -7,7 +7,7 @@
       @dismissed="dismissCountDown = 0"
       @dismiss-count-down="countDownChanged"
     >
-      Bitte gebe die {{ showError }} korrekt ein...
+      Bitte gebe {{ showError }} korrekt ein...
     </b-alert>
   </div>
 </template>

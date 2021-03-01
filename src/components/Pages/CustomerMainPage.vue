@@ -120,14 +120,16 @@ export default {
       this.$emit('customer-main-page', this.form);
     },
     isValidName() {
-      return this.form.fname ? this.form.fname.length >= 3 : null;
+      const reName = /^[A-Za-z \s]+$/;
+      return this.form.fname ? reName.test(this.form.fname) : null;
     },
     isValidLastName() {
-      return this.form.lname ? this.form.lname.length >= 3 : null;
+      const reLName = /^[A-Za-z \s]+$/;
+      return this.form.lname ? reLName.test(this.form.lname) : null;
     },
     isValidEmail() {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return this.form.email ? re.test(this.form.email) : null;
+      const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return this.form.email ? reEmail.test(this.form.email) : null;
     },
     isValidMob() {
       const re = /^[a-z0-9]+$/i;
@@ -159,10 +161,14 @@ export default {
     },
     showError() {
       const errs = [];
-      !this.isNameStateValid && errs.push('Namen');
-      !this.isLastNameStateValid && errs.push('Nachnamen');
-      !this.isEmailStateValid && errs.push('Email Adresse');
-      !this.isMobStateValid && errs.push('Kundennummer');
+      !this.isNameStateValid &&
+        errs.push(pagesMapping.customerMainPage.fields.fname.field);
+      !this.isLastNameStateValid &&
+        errs.push(pagesMapping.customerMainPage.fields.lname.field);
+      !this.isEmailStateValid &&
+        errs.push(pagesMapping.customerMainPage.fields.email.field);
+      !this.isMobStateValid &&
+        errs.push(pagesMapping.customerMainPage.fields.mob.field);
 
       return errorService(errs);
     },

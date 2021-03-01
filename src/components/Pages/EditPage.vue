@@ -201,9 +201,6 @@
       </div>
     </editor-menu-bar>
     <br />
-    <!-- <div class="border border-dark rounded">
-     
-    </div> -->
     <editor-content class="editor__content " :editor="editor" />
     <div class="row justify-content-center">
       <ButtonLeft @click.native="prevButton" />
@@ -270,7 +267,7 @@ export default {
         ],
         content: `
           <h2>
-            Hi there,
+            Hi there ${this.state.fname},
           </h2>
           <p>
             this is a very <em>basic</em> example of tiptap.
@@ -295,10 +292,11 @@ export default {
   },
   methods: {
     nextButton() {
-      this.$emit('edit-page', {
-        ...this.htmlData,
-        html: this.editor.getHTML(),
-      });
+      console.log(this.state);
+      // this.$emit('edit-page', {
+      //   ...this.htmlData,
+      //   html: this.editor.getHTML(),
+      // });
     },
     prevButton() {
       this.htmlData = {

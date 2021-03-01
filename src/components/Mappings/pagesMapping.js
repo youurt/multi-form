@@ -1,53 +1,54 @@
 const pagesInfo = {
   selectServicePage: {
-    title: 'Wählen Sie einen Auftrag aus',
-    content: ['Reperatur aufgeben', 'Support leisten', 'Reklemation aufgeben'],
+    title: 'Wählen Sie einen Service',
+    content: ['Reperatur Service', 'Support Service', 'Reklemation Service'],
+    serviceSlug: ['repair', 'support', 'claim'],
   },
   customerMainPage: {
-    title: 'Geben Sie die Informationen des Kunden ein',
+    title: 'Informationen zur Person',
     fields: {
       fname: {
         field: 'Vorname',
-        placeholder: 'Enter First Name',
-        errorMsg: 'Your must enter a valid name.',
+        placeholder: 'Geben Sie Ihren Vornamen ein',
+        errorMsg: 'Der Vorname scheint nicht korrekt zu sein!',
       },
       lname: {
         field: 'Nachname',
-        placeholder: 'Enter Last Name',
-        errorMsg: 'Your must enter a valid last name.',
+        placeholder: 'Geben Sie Ihren Nachnamen ein',
+        errorMsg: 'Der Vorname scheint nicht korrekt zu sein!',
       },
       email: {
         field: 'E Mail',
-        placeholder: 'Enter Mail Adress',
-        errorMsg: 'You must enter a valid mail adress.',
+        placeholder: 'Geben Sie Ihre e-mail Adresse ein',
+        errorMsg: 'Die e-mail Adresse scheint nicht korrekt!',
       },
       mob: {
-        field: 'Kunden Id',
-        placeholder: 'Enter Customer Id',
-        errorMsg: 'You must enter a valid customer Id.',
+        field: 'Kunden-ID',
+        placeholder: 'Geben Sie Ihre Kunden-ID ein',
+        errorMsg: 'Die Kunden-ID ist genau 7 Zeichen lang!',
       },
     },
   },
   issueDetailPage: {
-    title: 'Geben Sie weitere Informationen über den Auftrag',
+    title: 'Informationen zu ihrem Unternehmen',
     fields: {
       cname: {
         field: 'Unternehmen',
-        placeholder: 'Enter Company Name',
-        errorMsg: 'You must enter a valid company name.',
+        placeholder: 'Geben Sie den Namen Ihres Unternehmens ein',
+        errorMsg: 'Der Namen des Unternehmens scheint nicht korrekt zu sein!',
       },
       zip: {
-        field: 'Plz',
-        placeholder: 'Enter Plz',
-        errorMsg: 'You must enter a valid plz.',
+        field: 'PLZ',
+        placeholder: 'Geben Sie die PLZ des Unternehmens ein',
+        errorMsg: 'Die PLZ scheint nicht korrekt zu sein!',
       },
       title: {
-        field: 'Titel',
-        placeholder: 'Enter Titel',
-        errorMsg: 'You must enter a valid Title.',
+        field: 'Position',
+        placeholder: 'Geben Sie Ihre Position im Unternehmen ein',
+        errorMsg: 'Die Position schein nicht korrekt zu sein!',
       },
       typeinfo: {
-        field: 'Type',
+        field: 'Branche',
         options: [
           { text: 'Select One', value: null },
           'E-commerce',

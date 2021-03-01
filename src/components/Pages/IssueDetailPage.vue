@@ -34,12 +34,12 @@
         id="input-2"
         name="zip"
         v-model="form.zip"
-        :placeholder="pagesMapping.issueDetailPage.fields.cname.placeholder"
+        :placeholder="pagesMapping.issueDetailPage.fields.zip.placeholder"
         :state="isZipStateValid"
         required
       ></b-form-input>
       <b-form-invalid-feedback :state="isZipStateValid">
-        {{ pagesMapping.issueDetailPage.fields.cname.errorMsg }}
+        {{ pagesMapping.issueDetailPage.fields.zip.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
 
@@ -123,16 +123,19 @@ export default {
       this.$emit('issue-detail-page', this.form);
     },
     isValidCompany() {
-      return this.form.cname ? this.form.cname.length >= 3 : null;
+      const reComp = /^[.@&]?[a-zA-Z0-9 ]+[ !.@&()]?[ a-zA-Z0-9!()]+/;
+      return this.form.cname ? reComp.test(this.form.cname) : null;
     },
     isValidType() {
       return this.form.typeinfo ? this.form.typeinfo.length > 0 : null;
     },
     isValidZip() {
-      return this.form.zip ? this.form.zip.length >= 5 : null;
+      const reZip = /^(?!01000|99999)(0[1-9]\d{3}|[1-9]\d{4})$/;
+      return this.form.zip ? reZip.test(this.form.zip) : null;
     },
     isValidTitle() {
-      return this.form.title ? this.form.title.length > 5 : null;
+      const reTitle = /^[A-Za-z \s]+$/;
+      return this.form.title ? reTitle.test(this.form.title) : null;
     },
   },
   computed: {
@@ -158,10 +161,14 @@ export default {
     },
     showError() {
       const errs = [];
-      !this.isCompanyStateValid && errs.push('Firma');
-      !this.isZipStateValid && errs.push('PLZ');
-      !this.isTitleStateValid && errs.push('Titel');
-      !this.isTypeStateValid && errs.push('Typ');
+      !this.isCompanyStateValid &&
+        errs.push(pagesMapping.issueDetailPage.fields.cname.field);
+      !this.isZipStateValid &&
+        errs.push(pagesMapping.issueDetailPage.fields.zip.field);
+      !this.isTitleStateValid &&
+        errs.push(pagesMapping.issueDetailPage.fields.title.field);
+      !this.isTypeStateValid &&
+        errs.push(pagesMapping.issueDetailPage.fields.typeinfo.field);
 
       return errorService(errs);
     },
