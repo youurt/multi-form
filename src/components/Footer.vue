@@ -1,16 +1,22 @@
 <template>
   <div>
-    <b-navbar fixed="bottom" toggleable="lg" type="dark" variant="info" sticky>
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
+    <b-navbar
+      class="mt-5"
+      fixed="bottom"
+      toggleable="lg"
+      type="dark"
+      variant="secondary"
+      sticky
+    >
+      <b-container class="container-fluid justify-content-center">
+        <div
+          class="text-center p-6"
+          style="background-color: rgba(0, 0, 0, 0.2);"
+        >
+          © 2021:
+          <a class="text-dark" href="/">ComputerRepair24.com</a>
+        </div>
+      </b-container>
     </b-navbar>
   </div>
 </template>

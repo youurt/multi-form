@@ -2,40 +2,40 @@
   <b-container class="container-fluid px-1 py-5 mx-auto">
     <b-row class="d-flex justify-content-center">
       <b-col class="col-xl-9 col-lg-10 col-md-11">
-        <b-card no-body class="card rounded-0 b-0">
+        <b-card no-body class="card rounded-0 b-0 ">
           <CardHeader />
           <Progress :currentPage="currentPage" />
           <div class="content-fix">
-            <div class="card-body show pt-0">
-              <div class="content-change">
+            <div class="card-body show pt-0 mb-3">
+              <div class="content-change ">
                 <div v-if="state.next === 1">
-                  <FirstPage
+                  <SelectServicePage
                     :state="{ ...state }"
-                    @select-service="selectService"
+                    @select-service-page="selectServicePageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 2">
-                  <SecondPage
+                  <CustomerMainPage
                     :state="{ ...state }"
-                    @form-service="formService"
+                    @customer-main-page="customerMainPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 3">
-                  <ThirdPage
+                  <IssueDetailPage
                     :state="{ ...state }"
-                    @form-service2="formService2"
+                    @issue-detail-page="issueDetailPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 4">
-                  <FourthPage
+                  <EditPage
                     :state="{ ...state }"
-                    @form-service3="formService3"
+                    @edit-page="editPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 5">
-                  <FifthPage
+                  <SummaryPage
                     :state="{ ...state }"
-                    @form-service4="formService4"
+                    @summary-page="summaryPageHandler"
                   />
                 </div>
                 <div v-else><FinalPage :state="{ ...state }" /></div>
@@ -51,22 +51,22 @@
 <script>
 import CardHeader from './PageElements/CardHeader';
 import Progress from './PageElements/Progress';
-import FirstPage from './Pages/FirstPage';
-import SecondPage from './Pages/SecondPage';
-import ThirdPage from './Pages/ThirdPage';
-import FourthPage from './Pages/FourthPage';
-import FifthPage from './Pages/FifthPage';
+import SelectServicePage from './Pages/SelectServicePage';
+import CustomerMainPage from './Pages/CustomerMainPage';
+import IssueDetailPage from './Pages/IssueDetailPage';
+import EditPage from './Pages/EditPage';
+import SummaryPage from './Pages/SummaryPage';
 import FinalPage from './Pages/FinalPage';
 export default {
   name: 'MainPage',
   components: {
     CardHeader,
     Progress,
-    FirstPage,
-    SecondPage,
-    ThirdPage,
-    FourthPage,
-    FifthPage,
+    SelectServicePage,
+    CustomerMainPage,
+    IssueDetailPage,
+    EditPage,
+    SummaryPage,
     FinalPage,
   },
   data() {
@@ -76,20 +76,20 @@ export default {
     };
   },
   methods: {
-    selectService(selectData) {
-      this.state = { ...this.state, ...selectData };
+    selectServicePageHandler(pageLoad) {
+      this.state = { ...this.state, ...pageLoad };
     },
-    formService(formData) {
-      this.state = { ...this.state, ...formData };
+    customerMainPageHandler(pageLoad) {
+      this.state = { ...this.state, ...pageLoad };
     },
-    formService2(formData) {
-      this.state = { ...this.state, ...formData };
+    issueDetailPageHandler(pageLoad) {
+      this.state = { ...this.state, ...pageLoad };
     },
-    formService3(formData) {
-      this.state = { ...this.state, ...formData };
+    editPageHandler(pageLoad) {
+      this.state = { ...this.state, ...pageLoad };
     },
-    formService4(formData) {
-      this.state = { ...formData };
+    summaryPageHandler(pageLoad) {
+      this.state = { ...pageLoad };
     },
   },
   mounted() {},

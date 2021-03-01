@@ -35,8 +35,7 @@
           @click="commands.strike"
         >
           <b-icon
-            icon="type-strikethrough
-"
+            icon="type-strikethrough"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -49,8 +48,7 @@
           @click="commands.underline"
         >
           <b-icon
-            icon="type-underline
-"
+            icon="type-underline"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -63,8 +61,7 @@
           @click="commands.code"
         >
           <b-icon
-            icon="code
-"
+            icon="code"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -77,8 +74,7 @@
           @click="commands.paragraph"
         >
           <b-icon
-            icon="paragraph
-"
+            icon="paragraph"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -91,8 +87,7 @@
           @click="commands.heading({ level: 1 })"
         >
           <b-icon
-            icon="type-h1
-"
+            icon="type-h1"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -105,8 +100,7 @@
           @click="commands.heading({ level: 2 })"
         >
           <b-icon
-            icon="type-h2
-"
+            icon="type-h2"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -119,8 +113,7 @@
           @click="commands.heading({ level: 3 })"
         >
           <b-icon
-            icon="type-h3
-"
+            icon="type-h3"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -133,8 +126,7 @@
           @click="commands.bullet_list"
         >
           <b-icon
-            icon="list-ul
-"
+            icon="list-ul"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -147,8 +139,7 @@
           @click="commands.ordered_list"
         >
           <b-icon
-            icon="list-ol
-"
+            icon="list-ol"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -161,8 +152,7 @@
           @click="commands.blockquote"
         >
           <b-icon
-            icon="chat-left-quote
-"
+            icon="chat-left-quote"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -175,8 +165,7 @@
           @click="commands.code_block"
         >
           <b-icon
-            icon="file-code
-"
+            icon="file-code"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -185,8 +174,7 @@
 
         <button class="menubar__button" @click="commands.horizontal_rule">
           <b-icon
-            icon="hr
-"
+            icon="hr"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -195,8 +183,7 @@
 
         <button class="menubar__button" @click="commands.undo">
           <b-icon
-            icon="arrow-counterclockwise
-"
+            icon="arrow-counterclockwise"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -205,8 +192,7 @@
 
         <button class="menubar__button" @click="commands.redo">
           <b-icon
-            icon="arrow-clockwise
-"
+            icon="arrow-clockwise"
             scale="1"
             variant="dark"
             class="fa-long-arrow-right"
@@ -282,13 +268,34 @@ export default {
           new Underline(),
           new History(),
         ],
-        content: '',
+        content: `
+          <h2>
+            Hi there,
+          </h2>
+          <p>
+            this is a very <em>basic</em> example of tiptap.
+          </p>
+          <pre><code>body { display: none; }</code></pre>
+          <ul>
+            <li>
+              A regular list
+            </li>
+            <li>
+              With regular items
+            </li>
+          </ul>
+          <blockquote>
+            It's amazing 👏
+            <br />
+            – mom
+          </blockquote>
+        `,
       }),
     };
   },
   methods: {
     nextButton() {
-      this.$emit('form-service3', {
+      this.$emit('edit-page', {
         ...this.htmlData,
         html: this.editor.getHTML(),
       });
@@ -299,24 +306,11 @@ export default {
         next: 3,
         html: this.editor.getHTML(),
       };
-      this.$emit('form-service3', this.htmlData);
+      this.$emit('edit-page', this.htmlData);
     },
   },
   mounted() {
     this.htmlData = { ...this.state, next: 5, html: this.editor.getHTML() };
-    this.editor.setContent({
-      type: 'doc',
-      content: [
-        {
-          type: 'paragraph',
-          content: [
-            { type: 'text', text: 'First block ', marks: [{ type: 'bold' }] },
-            { type: 'text', text: '\n \n' },
-            { type: 'text', text: this.state.fname },
-          ],
-        },
-      ],
-    });
   },
 };
 </script>

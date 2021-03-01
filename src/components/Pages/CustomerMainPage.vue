@@ -113,11 +113,11 @@ export default {
       if (this.showError !== null) {
         this.dismissCountDown = this.dismissSecs;
       }
-      this.isCompleted && this.$emit('form-service', this.form);
+      this.isCompleted && this.$emit('customer-main-page', this.form);
     },
     prevButton() {
       this.form = { ...this.form, next: 1 };
-      this.$emit('form-service', this.form);
+      this.$emit('customer-main-page', this.form);
     },
     isValidName() {
       return this.form.fname ? this.form.fname.length >= 3 : null;

@@ -97,11 +97,10 @@ export default {
 
   methods: {
     nextButton() {
-      this.$emit('select-service', this.select);
+      this.$emit('select-service-page', this.select);
     },
   },
   mounted() {
-    console.log(pagesMapping.selectServicePage.title);
     this.select.selected = this.state.selected
       ? this.state.selected
       : 'create-website';

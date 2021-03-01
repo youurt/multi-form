@@ -28,12 +28,12 @@ export default {
     nextButton() {
       this.finalData = this.state;
       delete this.finalData.next;
-      this.$emit('form-service4', this.finalData);
+      this.$emit('summary-page', this.finalData);
     },
     prevButton() {
-      this.$emit('form-service4', { next: 4 });
+      // this.$emit('summary-page', { next: 4 });
       this.finalData = { ...this.finalData, next: 4 };
-      this.$emit('form-service4', this.finalData);
+      this.$emit('summary-page', this.finalData);
     },
   },
   mounted() {
