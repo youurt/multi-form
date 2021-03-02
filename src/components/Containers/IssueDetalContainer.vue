@@ -87,9 +87,9 @@
 
 <script>
 import errorService from '../../services/ErrorService';
-import ButtonLeft from '../PageElements/ButtonLeft';
-import ButtonRight from '../PageElements/ButtonRight';
-import ErrorMessage from '../PageElements/ErrorMessage';
+import ButtonLeft from '../Elements/ButtonLeft';
+import ButtonRight from '../Elements/ButtonRight';
+import ErrorMessage from '../Elements/ErrorMessage';
 import pagesMapping from '../Mappings/pagesMapping';
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },

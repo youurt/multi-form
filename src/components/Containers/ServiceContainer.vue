@@ -100,7 +100,7 @@
 <script>
 // import { } from 'bootstrap-vue';
 import pagesMapping from '../Mappings/pagesMapping';
-import ButtonRight from '../PageElements/ButtonRight';
+import ButtonRight from '../Elements/ButtonRight';
 export default {
   components: { ButtonRight },
   props: { state: Object },

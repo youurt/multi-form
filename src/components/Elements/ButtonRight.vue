@@ -1,12 +1,12 @@
 <template>
-  <b-button variant="secondary" class="btn prev mx-2">
-    <span
+  <b-button variant="blue" class="btn next mx-2">
+    Weiter<span
       ><b-icon
-        icon="arrow-left"
+        icon="arrow-right"
         scale="1"
         variant="light"
-        class="fa-long-arrow-left"/></span
-    >Zurück
+        class="long-arrow-right"
+    /></span>
   </b-button>
 </template>
 

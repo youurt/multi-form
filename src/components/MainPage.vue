@@ -9,36 +9,36 @@
             <b-card-body class="show pt-0 mb-3">
               <div class="content-change">
                 <div v-if="state.next === 1">
-                  <SelectServicePage
+                  <ServiceContainer
                     :state="{ ...state }"
                     @select-service-page="selectServicePageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 2">
-                  <CustomerMainPage
+                  <CustomerContainer
                     :state="{ ...state }"
                     @customer-main-page="customerMainPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 3">
-                  <IssueDetailPage
+                  <IssueDetalContainer
                     :state="{ ...state }"
                     @issue-detail-page="issueDetailPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 4">
-                  <EditPage
+                  <EditContainer
                     :state="{ ...state }"
                     @edit-page="editPageHandler"
                   />
                 </div>
                 <div v-else-if="state.next === 5">
-                  <SummaryPage
+                  <SummaryContainer
                     :state="{ ...state }"
                     @summary-page="summaryPageHandler"
                   />
                 </div>
-                <div v-else><FinalPage :state="{ ...state }" /></div>
+                <div v-else><FinalContainer :state="{ ...state }" /></div>
               </div>
             </b-card-body>
           </div>
@@ -49,25 +49,25 @@
 </template>
 
 <script>
-import CardHeader from './PageElements/CardHeader';
-import Progress from './PageElements/Progress';
-import SelectServicePage from './Pages/SelectServicePage';
-import CustomerMainPage from './Pages/CustomerMainPage';
-import IssueDetailPage from './Pages/IssueDetailPage';
-import EditPage from './Pages/EditPage';
-import SummaryPage from './Pages/SummaryPage';
-import FinalPage from './Pages/FinalPage';
+import CardHeader from './Elements/CardHeader';
+import Progress from './Elements/Progress';
+import ServiceContainer from './Containers/ServiceContainer';
+import CustomerContainer from './Containers/CustomerContainer';
+import IssueDetalContainer from './Containers/IssueDetalContainer';
+import EditContainer from './Containers/EditContainer';
+import SummaryContainer from './Containers/SummaryContainer';
+import FinalContainer from './Containers/FinalContainer';
 export default {
   name: 'MainPage',
   components: {
     CardHeader,
     Progress,
-    SelectServicePage,
-    CustomerMainPage,
-    IssueDetailPage,
-    EditPage,
-    SummaryPage,
-    FinalPage,
+    ServiceContainer,
+    CustomerContainer,
+    IssueDetalContainer,
+    EditContainer,
+    SummaryContainer,
+    FinalContainer,
   },
   data() {
     return {

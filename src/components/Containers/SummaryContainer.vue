@@ -1,7 +1,6 @@
 <template>
   <div>
     <h4 class="heading mb-4 pb-1">{{ pagesMapping.summaryPage.title }}</h4>
-
     <ul id="example-1">
       <li v-for="(item, key) in summary" :key="item">
         <b>{{ key }}</b> - {{ item }}
@@ -16,8 +15,8 @@
 
 <script>
 import pagesMapping from '../Mappings/pagesMapping';
-import ButtonLeft from '../PageElements/ButtonLeft';
-import ButtonApply from '../PageElements/ButtonApply';
+import ButtonLeft from '../Elements/ButtonLeft';
+import ButtonApply from '../Elements/ButtonApply';
 
 export default {
   components: { ButtonLeft, ButtonApply },

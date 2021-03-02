@@ -1,7 +1,9 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="secondary">
-      <b-navbar-brand href="/">ComputerRepair24.com</b-navbar-brand>
+      <b-navbar-brand href="/"
+        ><div class="yellow-text">ComputerRepair24.com</div></b-navbar-brand
+      >
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     </b-navbar>

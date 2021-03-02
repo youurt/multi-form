@@ -5,7 +5,7 @@
         icon="check2-all"
         scale="1"
         variant="light"
-        class="fa-long-arrow-right"
+        class="long-arrow-right"
     /></span>
   </b-button>
 </template>

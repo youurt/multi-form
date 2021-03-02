@@ -9,10 +9,7 @@
       sticky
     >
       <b-container class="container-fluid justify-content-center">
-        <div
-          class="text-center p-6"
-          style="background-color: rgba(0, 0, 0, 0.2);"
-        >
+        <div class="text-center p-6">
           © 2021:
           <a class="text-dark" href="/">ComputerRepair24.com</a>
         </div>
