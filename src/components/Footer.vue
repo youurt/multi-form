@@ -1,10 +1,9 @@
 <template>
   <div>
     <b-navbar
-      class="mt-5"
+      class="shadow-lg bg-white rounded"
       fixed="bottom"
       toggleable="lg"
-      type="dark"
       variant="secondary"
       sticky
     >

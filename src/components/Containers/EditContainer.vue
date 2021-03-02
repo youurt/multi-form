@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import pagesMapping from '../Mappings/pagesMapping';
+import pagesMapping from '../../mappings/pagesMapping';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonRight from '../Elements/ButtonRight';
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap';

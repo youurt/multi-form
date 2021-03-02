@@ -7,10 +7,6 @@
       :countDownChanged="countDownChanged"
     />
 
-    <!-- <div v-for="(item, key, index) in form" :key="index">
-      {{ item }} - {{ key }} - {{ index }}
-    </div> -->
-
     <b-form-group
       id="input-group-1"
       :label="pagesMapping.customerMainPage.fields.fname.field"
@@ -92,7 +88,7 @@ import validationService from '../../services/validationService';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonRight from '../Elements/ButtonRight';
 import ErrorMessage from '../Elements/ErrorMessage';
-import pagesMapping from '../Mappings/pagesMapping';
+import pagesMapping from '../../mappings/pagesMapping';
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },
   props: { state: Object },
@@ -108,34 +104,6 @@ export default {
         cuid: '',
         next: 3,
       },
-
-      // form: {
-      //   fname: {
-      //     nameValue: '',
-      //     label: pagesMapping.customerMainPage.fields.fname.field,
-      //     placeholder: pagesMapping.customerMainPage.fields.fname.placeholder,
-      //     errMsg: pagesMapping.customerMainPage.fields.fname.field,
-      //   },
-      //   lname: {
-      //     nameValue: '',
-      //     label: pagesMapping.customerMainPage.fields.lname.field,
-      //     placeholder: pagesMapping.customerMainPage.fields.lname.placeholder,
-      //     errMsg: pagesMapping.customerMainPage.fields.lname.field,
-      //   },
-      //   email: {
-      //     nameValue: '',
-      //     label: pagesMapping.customerMainPage.fields.email.field,
-      //     placeholder: pagesMapping.customerMainPage.fields.email.placeholder,
-      //     errMsg: pagesMapping.customerMainPage.fields.email.field,
-      //   },
-      //   cuid: {
-      //     nameValue: '',
-      //     label: pagesMapping.customerMainPage.fields.cuid.field,
-      //     placeholder: pagesMapping.customerMainPage.fields.cuid.placeholder,
-      //     errMsg: pagesMapping.customerMainPage.fields.cuid.field,
-      //   },
-      //   next: 3,
-      // },
     };
   },
   methods: {

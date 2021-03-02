@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import pagesMapping from '../Mappings/pagesMapping';
+import pagesMapping from '../mappings/pagesMapping';
 export default {
   data() {
     return {

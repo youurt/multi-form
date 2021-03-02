@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import pagesMapping from '../Mappings/pagesMapping';
+import pagesMapping from '../mappings/pagesMapping';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonApply from '../Elements/ButtonApply';
 

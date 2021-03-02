@@ -64,7 +64,7 @@ const pagesInfo = {
   editPage: { title: 'Möchten Sie noch etwas hinzufügen?' },
   summaryPage: { title: 'Sind diese Eingaben richtig?' },
   finalPage: {
-    title: 'Zusammenfassung.',
+    title: 'Zusammenfassung',
   },
   headerPage: {
     title: 'Nennen Sie uns Ihr Problem und wir helfen gerne!',

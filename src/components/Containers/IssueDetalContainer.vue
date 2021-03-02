@@ -91,7 +91,7 @@ import validationService from '../../services/validationService';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonRight from '../Elements/ButtonRight';
 import ErrorMessage from '../Elements/ErrorMessage';
-import pagesMapping from '../Mappings/pagesMapping';
+import pagesMapping from '../../mappings/pagesMapping';
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },
   props: { state: Object },

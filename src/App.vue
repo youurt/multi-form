@@ -29,10 +29,10 @@ $yellow-color: #fbc02d;
 $border-color: lightgrey;
 $background-color: #fafafa;
 $radio-color: #000;
-$box-shadow-color: rgba(0, 0, 0, 0.1);
-$selected-border-color: #f9a825;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$orange-color: #f9a825;
 $selected-border-shadow: #eeeeee;
-$btn-bg-color: #1a237e;
+$blue-color: #1a237e;
 $btn-txt-color: #fff;
 /*  color definitions */
 
@@ -47,9 +47,14 @@ header {
   top: 0;
   z-index: 10000;
 }
+
 /*  mains */
 
 /*  contaier-elements */
+
+.custom-header {
+  background-color: $blue-color;
+}
 .progress-bar {
   background-color: $yellow-color;
 }
@@ -93,11 +98,11 @@ header {
   filter: grayscale(100%);
 
   &:hover {
-    box-shadow: 1px 1px 2px 2px $box-shadow-color;
+    box-shadow: 1px 1px 2px 2px $shadow-color;
   }
 
   &.selected {
-    border: 1px solid $selected-border-color;
+    border: 1px solid $orange-color;
     box-shadow: 0px 8px 16px 0px $selected-border-shadow;
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
@@ -121,7 +126,7 @@ header {
 .btn {
   &-blue {
     margin-top: 40px;
-    background-color: $btn-bg-color;
+    background-color: $blue-color;
     color: $btn-txt-color;
     width: 28%;
 
