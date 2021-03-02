@@ -267,24 +267,27 @@ export default {
         ],
         content: `
           <h2>
-            Hi there ${this.state.fname},
+            Hallo ComputerRepair24.com Team!
           </h2>
           <p>
-            this is a very <em>basic</em> example of tiptap.
+            wir haben ein Problem und brauchen Ihre hilfe! 
           </p>
-          <pre><code>body { display: none; }</code></pre>
+          Dieses sind die häufigsten Probleme, die auftreten:
           <ul>
             <li>
-              A regular list
+              Problem 1
             </li>
             <li>
-              With regular items
+              Problem 2 
             </li>
           </ul>
+          <p>
+            Wir hoffen, dass Sie uns bald helfen können. 
+          </p>
           <blockquote>
-            It's amazing 👏
+            ${this.state.fname} ${this.state.lname}  
             <br />
-            – mom
+            ${this.state.cname}
           </blockquote>
         `,
       }),
@@ -292,11 +295,10 @@ export default {
   },
   methods: {
     nextButton() {
-      console.log(this.state);
-      // this.$emit('edit-page', {
-      //   ...this.htmlData,
-      //   html: this.editor.getHTML(),
-      // });
+      this.$emit('edit-page', {
+        ...this.htmlData,
+        html: this.editor.getHTML(),
+      });
     },
     prevButton() {
       this.htmlData = {

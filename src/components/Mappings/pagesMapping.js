@@ -1,8 +1,7 @@
 const pagesInfo = {
   selectServicePage: {
     title: 'Wählen Sie einen Service',
-    content: ['Reperatur Service', 'Support Service', 'Reklemation Service'],
-    serviceSlug: ['repair', 'support', 'claim'],
+    content: ['Reperatur-Service', 'Support-Service', 'Reklemation-Service'],
   },
   customerMainPage: {
     title: 'Informationen zur Person',
@@ -25,12 +24,13 @@ const pagesInfo = {
       cuid: {
         field: 'Kunden-ID',
         placeholder: 'Geben Sie Ihre Kunden-ID ein',
-        errorMsg: 'Die Kunden-ID ist genau 7 Zeichen lang!',
+        errorMsg:
+          'Die Kunden-ID ist genau 7 Zeichen lang und besteht aus Zahlen!',
       },
     },
   },
   issueDetailPage: {
-    title: 'Informationen zu ihrem Unternehmen',
+    title: 'Informationen zum Unternehmen',
     fields: {
       cname: {
         field: 'Unternehmen',
@@ -61,9 +61,11 @@ const pagesInfo = {
       },
     },
   },
-  editPage: { title: 'Bearbeiten Sie hier den Auftrag' },
-  summaryPage: { title: 'Bestätigen Sie die Auftragszusammenfassung' },
-  finalPage: { title: 'Vielen dank! Der Auftrag wurde bestätigt' },
+  editPage: { title: 'Möchten Sie noch etwas hinzufügen?' },
+  summaryPage: { title: 'Sind diese Eingaben richtig?' },
+  finalPage: {
+    title: 'Zusammenfassung.',
+  },
   headerPage: {
     title: 'Nennen Sie uns Ihr Problem und wir helfen gerne!',
     subtitle: 'Ihr ComputerRepair24.com Team!',

@@ -7,6 +7,10 @@
       :countDownChanged="countDownChanged"
     />
 
+    <!-- <div v-for="(item, key, index) in form" :key="index">
+      {{ item }} - {{ key }} - {{ index }}
+    </div> -->
+
     <b-form-group
       id="input-group-1"
       :label="pagesMapping.customerMainPage.fields.fname.field"
@@ -68,10 +72,10 @@
         name="cuid"
         v-model="form.cuid"
         :placeholder="pagesMapping.customerMainPage.fields.cuid.placeholder"
-        :state="isMobStateValid"
+        :state="isCuidStateValid"
         required
       ></b-form-input>
-      <b-form-invalid-feedback :state="isMobStateValid">
+      <b-form-invalid-feedback :state="isCuidStateValid">
         {{ pagesMapping.customerMainPage.fields.cuid.errorMsg }}
       </b-form-invalid-feedback>
     </b-form-group>
@@ -103,6 +107,34 @@ export default {
         cuid: '',
         next: 3,
       },
+
+      // form: {
+      //   fname: {
+      //     nameValue: '',
+      //     label: pagesMapping.customerMainPage.fields.fname.field,
+      //     placeholder: pagesMapping.customerMainPage.fields.fname.placeholder,
+      //     errMsg: pagesMapping.customerMainPage.fields.fname.field,
+      //   },
+      //   lname: {
+      //     nameValue: '',
+      //     label: pagesMapping.customerMainPage.fields.lname.field,
+      //     placeholder: pagesMapping.customerMainPage.fields.lname.placeholder,
+      //     errMsg: pagesMapping.customerMainPage.fields.lname.field,
+      //   },
+      //   email: {
+      //     nameValue: '',
+      //     label: pagesMapping.customerMainPage.fields.email.field,
+      //     placeholder: pagesMapping.customerMainPage.fields.email.placeholder,
+      //     errMsg: pagesMapping.customerMainPage.fields.email.field,
+      //   },
+      //   cuid: {
+      //     nameValue: '',
+      //     label: pagesMapping.customerMainPage.fields.cuid.field,
+      //     placeholder: pagesMapping.customerMainPage.fields.cuid.placeholder,
+      //     errMsg: pagesMapping.customerMainPage.fields.cuid.field,
+      //   },
+      //   next: 3,
+      // },
     };
   },
   methods: {
@@ -131,10 +163,11 @@ export default {
       const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return this.form.email ? reEmail.test(this.form.email) : null;
     },
-    isValidMob() {
-      const re = /^[a-z0-9]+$/i;
+    isValidCuid() {
+      const reCuid = /^\d+$/;
+      // const re = /^[a-z0-9]+$/i;
       return this.form.cuid
-        ? re.test(this.form.cuid) && this.form.cuid.length === 7
+        ? reCuid.test(this.form.cuid) && this.form.cuid.length === 7
         : null;
     },
   },
@@ -148,14 +181,14 @@ export default {
     isEmailStateValid() {
       return this.form.email ? this.isValidEmail() : null;
     },
-    isMobStateValid() {
-      return this.form.cuid ? this.isValidMob() : null;
+    isCuidStateValid() {
+      return this.form.cuid ? this.isValidCuid() : null;
     },
     isCompleted() {
       return this.isValidName() &&
         this.isValidLastName() &&
         this.isValidEmail() &&
-        this.isValidMob()
+        this.isValidCuid()
         ? true
         : false;
     },
@@ -167,9 +200,8 @@ export default {
         errs.push(pagesMapping.customerMainPage.fields.lname.field);
       !this.isEmailStateValid &&
         errs.push(pagesMapping.customerMainPage.fields.email.field);
-      !this.isMobStateValid &&
+      !this.isCuidStateValid &&
         errs.push(pagesMapping.customerMainPage.fields.cuid.field);
-
       return errorService(errs);
     },
   },

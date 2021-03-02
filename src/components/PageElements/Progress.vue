@@ -4,7 +4,6 @@
       class="mb-3"
       :value="value * currentPage"
       :max="max"
-      show-progress
       animated
     ></b-progress>
   </div>

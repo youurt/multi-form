@@ -7,7 +7,7 @@
     <b-form-radio-group class="row justify-content-between px-3 ">
       <div
         :class="
-          select.selected === pagesMapping.selectServicePage.serviceSlug[0]
+          select.selected === pagesMapping.selectServicePage.content[0]
             ? 'card-block radio selected'
             : 'card-block radio'
         "
@@ -15,15 +15,13 @@
         <b-row class=" justify-content-end d-flex px-3">
           <b-icon
             :icon="
-              select.selected === pagesMapping.selectServicePage.serviceSlug[0]
+              select.selected === pagesMapping.selectServicePage.content[0]
                 ? 'check-circle'
                 : 'circle'
             "
             scale="2"
             variant="dark"
-            @click="
-              select.selected = pagesMapping.selectServicePage.serviceSlug[0]
-            "
+            @click="select.selected = pagesMapping.selectServicePage.content[0]"
           />
         </b-row>
         <b-row class="justify-content-center d-flex">
@@ -37,7 +35,7 @@
       </div>
       <div
         :class="
-          select.selected === pagesMapping.selectServicePage.serviceSlug[1]
+          select.selected === pagesMapping.selectServicePage.content[1]
             ? 'card-block radio selected'
             : 'card-block radio '
         "
@@ -45,15 +43,13 @@
         <b-row class="justify-content-end d-flex px-3">
           <b-icon
             :icon="
-              select.selected === pagesMapping.selectServicePage.serviceSlug[1]
+              select.selected === pagesMapping.selectServicePage.content[1]
                 ? 'check-circle'
                 : 'circle'
             "
             scale="2"
             variant="dark"
-            @click="
-              select.selected = pagesMapping.selectServicePage.serviceSlug[1]
-            "
+            @click="select.selected = pagesMapping.selectServicePage.content[1]"
           />
         </b-row>
         <b-row class="justify-content-center d-flex">
@@ -67,7 +63,7 @@
       </div>
       <div
         :class="
-          select.selected === pagesMapping.selectServicePage.serviceSlug[2]
+          select.selected === pagesMapping.selectServicePage.content[2]
             ? 'card-block radio selected'
             : 'card-block radio '
         "
@@ -75,15 +71,13 @@
         <b-row class="justify-content-end d-flex px-3">
           <b-icon
             :icon="
-              select.selected === pagesMapping.selectServicePage.serviceSlug[2]
+              select.selected === pagesMapping.selectServicePage.content[2]
                 ? 'check-circle'
                 : 'circle'
             "
             scale="2"
             variant="dark"
-            @click="
-              select.selected = pagesMapping.selectServicePage.serviceSlug[2]
-            "
+            @click="select.selected = pagesMapping.selectServicePage.content[2]"
           />
         </b-row>
         <b-row class="justify-content-center d-flex">
@@ -113,7 +107,7 @@ export default {
   data: () => {
     return {
       select: {
-        selected: pagesMapping.selectServicePage.serviceSlug[0],
+        selected: pagesMapping.selectServicePage.content[0],
         next: 2,
       },
       pagesMapping: pagesMapping,
@@ -128,7 +122,7 @@ export default {
   mounted() {
     this.select.selected = this.state.selected
       ? this.state.selected
-      : pagesMapping.selectServicePage.serviceSlug[0];
+      : pagesMapping.selectServicePage.content[0];
   },
 };
 </script>
