@@ -87,7 +87,8 @@
 </template>
 
 <script>
-import errorService from '../../services/ErrorService';
+import errorService from '../../services/errorService';
+import validationService from '../../services/validationService';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonRight from '../Elements/ButtonRight';
 import ErrorMessage from '../Elements/ErrorMessage';
@@ -152,22 +153,23 @@ export default {
       this.$emit('customer-main-page', this.form);
     },
     isValidName() {
-      const reName = /^[A-Za-z \s]+$/;
-      return this.form.fname ? reName.test(this.form.fname) : null;
+      return this.form.fname
+        ? validationService('name', this.form.fname)
+        : null;
     },
     isValidLastName() {
-      const reLName = /^[A-Za-z \s]+$/;
-      return this.form.lname ? reLName.test(this.form.lname) : null;
+      return this.form.lname
+        ? validationService('name', this.form.lname)
+        : null;
     },
     isValidEmail() {
-      const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return this.form.email ? reEmail.test(this.form.email) : null;
+      return this.form.email
+        ? validationService('email', this.form.email)
+        : null;
     },
     isValidCuid() {
-      const reCuid = /^\d+$/;
-      // const re = /^[a-z0-9]+$/i;
       return this.form.cuid
-        ? reCuid.test(this.form.cuid) && this.form.cuid.length === 7
+        ? validationService('id', this.form.cuid) && this.form.cuid.length === 7
         : null;
     },
   },

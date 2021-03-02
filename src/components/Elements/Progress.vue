@@ -18,12 +18,6 @@ export default {
       max: 100,
     };
   },
-
-  // updated() {
-  //   this.$nextTick(function() {
-  //     this.value *= this.currentPage;
-  //   });
-  // },
 };
 </script>
 

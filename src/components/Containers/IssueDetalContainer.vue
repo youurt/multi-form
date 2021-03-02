@@ -86,7 +86,8 @@
 </template>
 
 <script>
-import errorService from '../../services/ErrorService';
+import errorService from '../../services/errorService';
+import validationService from '../../services/validationService';
 import ButtonLeft from '../Elements/ButtonLeft';
 import ButtonRight from '../Elements/ButtonRight';
 import ErrorMessage from '../Elements/ErrorMessage';
@@ -123,19 +124,20 @@ export default {
       this.$emit('issue-detail-page', this.form);
     },
     isValidCompany() {
-      const reComp = /^[.@&]?[a-zA-Z0-9 ]+[ !.@&()]?[ a-zA-Z0-9!()]+/;
-      return this.form.cname ? reComp.test(this.form.cname) : null;
+      return this.form.cname
+        ? validationService('company', this.form.cname)
+        : null;
     },
     isValidType() {
       return this.form.typeinfo ? this.form.typeinfo.length > 0 : null;
     },
     isValidZip() {
-      const reZip = /^(?!01000|99999)(0[1-9]\d{3}|[1-9]\d{4})$/;
-      return this.form.zip ? reZip.test(this.form.zip) : null;
+      return this.form.zip ? validationService('zip', this.form.zip) : null;
     },
     isValidTitle() {
-      const reTitle = /^[A-Za-z \s]+$/;
-      return this.form.title ? reTitle.test(this.form.title) : null;
+      return this.form.title
+        ? validationService('name', this.form.title)
+        : null;
     },
   },
   computed: {

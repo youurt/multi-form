@@ -1,6 +1,6 @@
-# my-app
+# Entwicklungsaufgabe für Frontend-Developer
 
-## Project setup
+## Project dist run
 ```
 yarn install
 ```

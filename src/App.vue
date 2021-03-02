@@ -3,7 +3,7 @@
     <body class="d-flex flex-column min-vh-100">
       <header><NavBar /></header>
       <content><MainPage /></content>
-      <footer><Footer /></footer>
+      <footer class="mt-auto"><Footer /></footer>
     </body>
   </div>
 </template>
