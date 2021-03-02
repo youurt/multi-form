@@ -86,12 +86,10 @@
 </template>
 
 <script>
-import errorService from '../../services/errorService';
-import validationService from '../../services/validationService';
-import ButtonLeft from '../Elements/ButtonLeft';
-import ButtonRight from '../Elements/ButtonRight';
-import ErrorMessage from '../Elements/ErrorMessage';
+import { errorService, validationService } from '../../services';
 import pagesMapping from '../../mappings/pagesMapping';
+import { ButtonLeft, ButtonRight, ErrorMessage } from '../Elements';
+
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },
   props: { state: Object },

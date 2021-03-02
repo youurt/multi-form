@@ -21,12 +21,14 @@
 
 <script>
 import pagesMapping from '../../mappings/pagesMapping';
+
 export default {
   data() {
     return { pagesMapping };
   },
   props: { state: Object },
   mounted() {
+    // post request here
     alert(JSON.stringify(this.state, null, 4));
   },
 };

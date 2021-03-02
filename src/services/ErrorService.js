@@ -1,4 +1,5 @@
 const errorService = (errs) => {
+  // todo: dynamic errorService
   if (errs.length === 0) {
     return null;
   } else if (errs.length === 1) {

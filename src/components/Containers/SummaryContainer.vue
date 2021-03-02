@@ -15,8 +15,7 @@
 
 <script>
 import pagesMapping from '../mappings/pagesMapping';
-import ButtonLeft from '../Elements/ButtonLeft';
-import ButtonApply from '../Elements/ButtonApply';
+import { ButtonLeft, ButtonApply } from '../Elements';
 
 export default {
   components: { ButtonLeft, ButtonApply },
@@ -31,6 +30,7 @@ export default {
   methods: {
     nextButton() {
       this.finalData = this.state;
+      // next page number is not needed when data is pushed to server
       delete this.finalData.next;
       this.finalData = {
         ...this.finalData,

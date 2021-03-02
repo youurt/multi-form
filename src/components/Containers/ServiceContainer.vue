@@ -3,7 +3,6 @@
     <h4 class="heading mb-4 pb-1">
       {{ pagesMapping.selectServicePage.title }}
     </h4>
-
     <b-form-radio-group class="row justify-content-between px-3 ">
       <div
         :class="
@@ -98,9 +97,9 @@
 </template>
 
 <script>
-// import { } from 'bootstrap-vue';
 import pagesMapping from '../../mappings/pagesMapping';
-import ButtonRight from '../Elements/ButtonRight';
+import { ButtonRight } from '../Elements';
+
 export default {
   components: { ButtonRight },
   props: { state: Object },
@@ -113,7 +112,6 @@ export default {
       pagesMapping: pagesMapping,
     };
   },
-
   methods: {
     nextButton() {
       this.$emit('select-service-page', this.select);

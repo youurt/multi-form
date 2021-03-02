@@ -1,4 +1,5 @@
 <template>
+  <!-- the footer is just a bootstrap navbar which is used with a container at the bottom of the page -->
   <div>
     <b-navbar
       class="shadow-lg bg-white rounded"

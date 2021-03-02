@@ -1,24 +1,33 @@
-# Entwicklungsaufgabe für Frontend-Developer
-
+# Coding Challange Frontend-Developer HRF 
 ## Project dist run
 ```
-yarn install
+yarn global add serve
+serve -s dist  
 ```
 
-### Compiles and hot-reloads for development
+## Project dev run
 ```
+yarn install
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Description
 
-### Lints and fixes files
-```
-yarn lint
-```
+- Multi-Step-Form SPA with vue.js (2), bootstrap-vue. 
+  
+- For the WYSIWYGEditor "tiptap" is used.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- MainPage.vue is the main component which renders the Containers based on the current page number. The user can go back and forth and the user input should be saved in an object called "state". This could be optimized with vuex, since now it is mutable!
+
+- For the form validation simple regex is used (see services/validationService.js).
+
+- The "Containers", "Elements" and "services" folders have each an index.js file, so they can be imported easily.
+
+- The mappings/pagesMappings.js file is for data modification. Each field can be changed with this file.
+
+
+
+### To-Do
+
+- General: use vuex for immutable state management
+- Containers: render input fields with v-for

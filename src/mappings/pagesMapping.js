@@ -1,4 +1,5 @@
 const pagesInfo = {
+  // data mapping for each container
   selectServicePage: {
     title: 'Wählen Sie einen Service',
     content: ['Reperatur-Service', 'Support-Service', 'Reklemation-Service'],
