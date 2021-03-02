@@ -21,8 +21,6 @@ yarn serve
 
 - For the form validation simple regex is used (see services/validationService.js).
 
-- The "Containers", "Elements" and "services" folders have each an index.js file, so they can be imported easily.
-
 - The mappings/pagesMappings.js file is for data modification. Each field can be changed with this file.
 
 

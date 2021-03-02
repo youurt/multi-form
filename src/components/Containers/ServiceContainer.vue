@@ -98,7 +98,7 @@
 
 <script>
 import pagesMapping from '../../mappings/pagesMapping';
-import { ButtonRight } from '../Elements';
+import ButtonRight from '../Elements/ButtonRight';
 
 export default {
   components: { ButtonRight },

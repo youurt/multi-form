@@ -79,7 +79,8 @@
 
 <script>
 import pagesMapping from '../../mappings/pagesMapping';
-import { ButtonLeft, ButtonRight } from '../Elements';
+import ButtonLeft from '../Elements/ButtonLeft';
+import ButtonRight from '../Elements/ButtonRight';
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap';
 
 import {

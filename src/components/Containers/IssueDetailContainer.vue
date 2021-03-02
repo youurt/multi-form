@@ -86,9 +86,12 @@
 </template>
 
 <script>
-import { errorService, validationService } from '../../services';
+import errorService from '../../services/errorService';
+import validationService from '../../services/validationService';
 import pagesMapping from '../../mappings/pagesMapping';
-import { ButtonLeft, ButtonRight, ErrorMessage } from '../Elements';
+import ButtonLeft from '../Elements/ButtonLeft';
+import ButtonRight from '../Elements/ButtonRight';
+import ErrorMessage from '../Elements/ErrorMessage';
 
 export default {
   components: { ButtonLeft, ButtonRight, ErrorMessage },

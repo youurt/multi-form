@@ -48,14 +48,13 @@
 <script>
 import CardHeader from './Elements/CardHeader';
 import Progress from './Elements/Progress';
-import {
-  ServiceContainer,
-  CustomerContainer,
-  IssueDetailContainer,
-  EditContainer,
-  SummaryContainer,
-  FinalContainer,
-} from './Containers';
+
+import CustomerContainer from './Containers/CustomerContainer';
+import ServiceContainer from './Containers/ServiceContainer';
+import IssueDetailContainer from './Containers/IssueDetailContainer';
+import SummaryContainer from './Containers/SummaryContainer';
+import FinalContainer from './Containers/FinalContainer';
+import EditContainer from './Containers/EditContainer';
 
 export default {
   name: 'MainPage',
